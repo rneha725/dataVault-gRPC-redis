@@ -1,0 +1,23 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package org.projects.john.crickett._48.data.vault; //gets generated in the build folder
+
+/*Tokens getters and setters*/
+message TokenCreationRequest {
+  string userId = 1;
+  map<string, string> values = 2;
+}
+
+message TokenCreationResponse {
+  map<string, string> tokens = 1; //Here 2 is a tag and protobuf uses it to identify fields
+}
+
+/*Permission related*/
+message PermissionRequest {
+  string token = 1;
+  string userId = 2;
+}
+
+message PermissionResponse {
+  string status = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package org.projects.john.crickett._48.data.vault; //gets generated in the build folder
+import "models.proto";
+
+service TokenizationService {
+    rpc tokenize(TokenCreationRequest) returns (TokenCreationResponse); //represents unary request and response, for stream, use a stream keyworrd before request or response
+    rpc detokenize(TokenCreationRequest) returns (TokenCreationResponse);
+    rpc addPermission(PermissionRequest) returns (PermissionResponse);
+    rpc removePermission(PermissionRequest) returns (PermissionResponse);
+}
